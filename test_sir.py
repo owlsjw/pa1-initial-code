@@ -77,7 +77,9 @@ def gen_check_rand_calls(seed, max_num_calls):
                     return False, "Not enough calls to random.random()"
                 return False, "Too many calls to random.random()"
 
-        return False, "Incorrect number of calls to random.random()"
+        msg = ("Possibly incorrect number of calls to random.random()"
+               " or missing/incorrect call to random.seed to set the seed.")
+        return False, msg
 
     return check
 
