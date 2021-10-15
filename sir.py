@@ -1,7 +1,7 @@
 '''
 Epidemic modelling
 
-YOUR NAME
+Jiayu Wang
 
 Functions for running a simple epidemiological simulation
 '''
@@ -37,11 +37,21 @@ def has_an_infected_neighbor(city, location):
     disease_state, _ = city[location]
     assert disease_state == "S"
 
-    # YOUR CODE HERE
-
-    # REPLACE False WITH AN APPROPRIATE RETURN VALUE
-    return False
-
+    For city[location-1]:
+        if disease_state == "I":
+            return True
+        else:
+            return False
+    For city[location+1]:
+        if disease_state == "I":
+            return False
+        else:
+            return False
+    For city[0]:
+        if 
+        
+    For city[len(city)-1]:
+        
 
 def advance_person_at_location(city, location, days_contagious):
     '''
@@ -60,10 +70,18 @@ def advance_person_at_location(city, location, days_contagious):
 
     assert 0 <= location < len(city)
 
-    # YOUR CODE HERE
-
-    # REPLACE ("R", 0) WITH AN APPROPRIATE RETURN VALUE
-    return ("R", 0)
+    For disease_state == "S":
+        if has_an_infected_neighbor == True:
+            return ("I",0)
+        else:
+            return ("S",d+1)
+    For disease_state == "I":
+        if d == 2:
+            return ("R",0)
+        else:
+            return ("I",d+1)
+    For disease_state == "R":
+        return ("R",d+1)
 
 
 def simulate_one_day(starting_city, days_contagious):
